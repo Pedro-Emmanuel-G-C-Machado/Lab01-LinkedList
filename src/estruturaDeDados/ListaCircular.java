@@ -11,7 +11,7 @@ public class ListaCircular {
 
     public void insereInicio(int i) {
         No n = new No(i);
-        if (n == null) {
+        if (cabeca == null) {
             cabeca = n;
             cauda = n;
             cauda.setProximo(cabeca);
