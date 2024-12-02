@@ -19,8 +19,6 @@ public class ListaCircular {
             n.setProximo(cabeca);
             cauda.setProximo(n);
             cabeca = n;
-            ;
-
         }
     }
 
