@@ -76,41 +76,33 @@ public class Lista {
     }
 
     public void removeIndice(int i) {
-        if (cabeca == null || i < 0) {
-            return;
-        }
-        if (i == 0) {
-            cabeca = cabeca.getProximo();
-            return;
-        }
         No n = cabeca;
-        for (int j = 0; n != null && j < i - 1; j++) {
-            n = n.getProximo();
-        }
-        if (n == null || n.getProximo() == null) {
-            return;
-        }
-        n.setProximo(n.getProximo().getProximo());
-    }
 
-    public void insereElementoPosicao(int i, int j) {
-        if (i < 0) {
-            return;
+        for (int f= 0; f<i; f++) {
+                n = n.getProximo();
         }
-        No novoNo = new No(j);
-        if (i == 0) {
-            novoNo.setProximo(cabeca);
-            cabeca = novoNo;
-            return;
-        }
+
+        n.setProximo(n.getProximo().getProximo());
+}
+
+public void insereElementoPosicao(int i, int j) {
+        //busca a posicao
         No n = cabeca;
-        for (int k = 0; n != null && k < i - 1; k++) {
-            n = n.getProximo();
+        No anterior = n;
+        for (int b=0 ; b<=j ; b++) {
+                anterior = n;
+                n = n.getProximo();
+
+                if (n == null) {
+                        insereFim(i);
+                        return;
+                }
         }
-        if (n == null) {
-            return;
-        }
-        novoNo.setProximo(n.getProximo());
-        n.setProximo(novoNo);
-    }
+
+        No novo = new No(i);
+        novo.setProximo(n);
+
+        anterior.setProximo(novo);
+}
+
 }

@@ -51,6 +51,7 @@ public class ListaCircular {
         } while (n != cabeca);
         return -1;
     }
+    
 
     public void insereFim(int i) {
         No n = new No(i);
@@ -86,15 +87,16 @@ public class ListaCircular {
         if (cabeca == cauda) {
             cabeca = null;
             cauda = null;
-
+        } else {
+            No n = cabeca;
+            while (n.getProximo() != cauda) {
+                n = n.getProximo();
+            }
+            n.setProximo(cabeca);
+            cauda = n;
         }
-        No n = cabeca;
-        while (n.getProximo() != cauda) {
-            n = n.getProximo();
-        }
-        n.setProximo(cabeca);
-        cauda = cabeca;
     }
+    
 
     public void removeIndice(int i) {
 
