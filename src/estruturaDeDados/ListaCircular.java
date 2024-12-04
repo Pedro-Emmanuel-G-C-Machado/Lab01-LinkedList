@@ -37,21 +37,14 @@ public class ListaCircular {
     }
 
     public int buscaIndice(int i) {
-        if (cabeca == null) {
-            return -1;
-        }
         No n = cabeca;
-        int indice = 0;
-        do {
-            if (n.getValor() == i) {
-                return indice;
-            }
+
+        for (int count = 0; count < i; count++) {
             n = n.getProximo();
-            indice++;
-        } while (n != cabeca);
-        return -1;
+        }
+
+        return n.getValor();
     }
-    
 
     public void insereFim(int i) {
         No n = new No(i);
@@ -96,7 +89,6 @@ public class ListaCircular {
             cauda = n;
         }
     }
-    
 
     public void removeIndice(int i) {
 

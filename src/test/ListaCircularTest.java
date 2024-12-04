@@ -1,6 +1,5 @@
 package test;
 
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -27,7 +26,7 @@ public class ListaCircularTest {
         assertEquals(e.buscaElemento(0), true);
         e.insereInicio(2);
         e.insereInicio(3);
-       // assertEquals("O indice 4 é o 3", e.buscaIndice(4), 3);
+        assertEquals("O indice 4 é o 3", e.buscaIndice(4), 3);
         assertTrue("Não encontrado " + 0, e.buscaElemento(0));
         assertTrue("Não encontrado " + 1, e.buscaElemento(1));
         assertTrue("Não encontrado " + 2, e.buscaElemento(2));
